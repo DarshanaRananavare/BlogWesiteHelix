@@ -1,0 +1,40 @@
+
+@model BlogWebsiteHelix.Feaure.Blogs.Models.ArticleModel
+@{
+    var blogId = ViewBag.blogId;
+    var item = Sitecore.Context.Database.GetItem(blogId);
+}
+<main role="main" class="container blog-post-detail">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="blog-post-detail-card card">
+                <img src="~/assets/images/tech.jpg" />               
+                <div class="card-body bg-light">
+                    <strong class="d-inline-block mb-2 text-success">Design</strong>
+                    <h3 class="card-title">@Html.Raw(item.Fields["Title"].Value)</h3>
+                    <div class="mb-1 text-muted">@Html.Raw(Model.PostedDate.ToString("MMM dd, yyyy"))</div>
+                    @Html.Raw(item.Fields["LongDescription"].Value)
+                    <p></p>
+                    <div class="blog-detail-tag-list">
+                        <span class="read-more-heading">Read more: </span>
+                        @*@if (Model.Tags)
+                {
+                    foreach (var str in Model.Tags)
+                    {
+                        <a class="btn btn-info" href="#" role="button">@str</a>
+                    }
+                }*@
+                        <a class="btn btn-info" href="#" role="button">Tag</a>
+                        <a class="btn btn-info" href="#" role="button">Super Extra Long Tag</a>
+                        <a class="btn btn-info" href="#" role="button">Extra Long Tag</a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+

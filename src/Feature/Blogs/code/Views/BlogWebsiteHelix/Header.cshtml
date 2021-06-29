@@ -1,0 +1,19 @@
+
+<div>
+    @{
+        //var item = Sitecore.Context.Database.GetItem("/sitecore/content/Alexa/LocalSettings");
+        var item = Sitecore.Context.Database.GetItem("{6D558108-FC5E-4A19-AE7A-D4AFC8B91879}");
+    }
+
+</div>
+
+@*<div>
+        <h1>@Html.Raw(item.Fields["Header-Title"].Value)</h1><br />
+        @Html.Raw(item.Fields["Header-SubTitle"].Value)
+    </div>*@
+<div class="container">
+    <div class="jumbotron text-white bg-primary">
+        <h1 class="display-3">@Html.Raw(item.Fields["Header-Title"].Value)</h1>
+        <p class="lead"> @Html.Raw(item.Fields["Header-SubTitle"].Value)</p>
+    </div>
+</div><!-- /.container -->
